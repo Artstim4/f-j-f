@@ -1,41 +1,108 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7raqqjj6mmo4"]
+[gd_scene load_steps=7 format=3 uid="uid://c7raqqjj6mmo4"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_jepo2"]
-[ext_resource type="Texture2D" uid="uid://t26yj40j6oxk" path="res://icon.svg" id="2_fb3le"]
+[ext_resource type="Texture2D" uid="uid://cb86ilq8n4jyy" path="res://TEST.png" id="2_xv4xh"]
+[ext_resource type="Texture2D" uid="uid://dwxaafh1xfg08" path="res://спрайты/Sprite-0002.png" id="3_7coiu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_duiln"]
-custom_solver_bias = 0.327
-size = Vector2(130, 130)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6t8qc"]
+texture = ExtResource("3_7coiu")
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+5:0/0 = 0
+5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:0/0/physics_layer_0/angular_velocity = 0.0
+6:0/0 = 0
+6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_0/angular_velocity = 0.0
+7:0/0 = 0
+7:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:0/0/physics_layer_0/angular_velocity = 0.0
+8:0/0 = 0
+8:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:0/0/physics_layer_0/angular_velocity = 0.0
+9:0/0 = 0
+9:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:0/0/physics_layer_0/angular_velocity = 0.0
+10:0/0 = 0
+10:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+10:0/0/physics_layer_0/angular_velocity = 0.0
+11:0/0 = 0
+11:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+11:0/0/physics_layer_0/angular_velocity = 0.0
+12:0/0 = 0
+12:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+12:0/0/physics_layer_0/angular_velocity = 0.0
+13:0/0 = 0
+13:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+13:0/0/physics_layer_0/angular_velocity = 0.0
+14:0/0 = 0
+14:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+14:0/0/physics_layer_0/angular_velocity = 0.0
+15:0/0 = 0
+15:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+15:0/0/physics_layer_0/angular_velocity = 0.0
+16:0/0 = 0
+16:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+16:0/0/physics_layer_0/angular_velocity = 0.0
+16:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+17:0/0 = 0
+17:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+17:0/0/physics_layer_0/angular_velocity = 0.0
+18:0/0 = 0
+18:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+18:0/0/physics_layer_0/angular_velocity = 0.0
+18:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:0/0 = 0
+19:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+19:0/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bb61"]
-size = Vector2(1078, 20)
+[sub_resource type="TileSet" id="TileSet_31awk"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_6t8qc")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p6iwf"]
+radius = 8.0
+height = 16.0
 
 [node name="Node2D" type="Node2D"]
 
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(22, 2)
+scale = Vector2(1.36595, 1.1739)
+tile_set = SubResource("TileSet_31awk")
+format = 2
+layer_0/name = "Grass"
+layer_0/z_index = 1
+layer_0/tile_data = PackedInt32Array(262139, 917504, 0, 65533, 720896, 805306368, 262133, 196608, 0)
+layer_1/name = "Ground"
+layer_1/tile_data = PackedInt32Array(-13, 524288, 0, 65523, 524288, 0, 131059, 524288, 0, 196595, 524288, 0, 262131, 524288, 0, 327667, 524288, 0, -12, 524288, 0, 65524, 524288, 0, 131060, 524288, 0, 196596, 524288, 0, 262132, 524288, 0, 327668, 524288, 0, -11, 524288, 0, 65525, 524288, 0, 131061, 524288, 0, 196597, 524288, 0, 262133, 1048576, 0, 327669, 524288, 0, -10, 524288, 0, 65526, 524288, 0, 131062, 524288, 0, 196598, 524288, 0, 262134, 524288, 0, 327670, 524288, 0, -9, 524288, 0, 65527, 524288, 0, 131063, 524288, 0, 196599, 524288, 0, 262135, 524288, 0, 327671, 524288, 0, -8, 524288, 0, 65528, 524288, 0, 131064, 524288, 0, 196600, 524288, 0, 262136, 524288, 0, 327672, 524288, 0, -7, 524288, 0, 65529, 524288, 0, 131065, 524288, 0, 196601, 524288, 0, 262137, 524288, 0, 327673, 524288, 0, -6, 524288, 0, 65530, 524288, 0, 131066, 524288, 0, 196602, 524288, 0, 262138, 524288, 0, 327674, 524288, 0, -5, 524288, 0, 65531, 524288, 0, 131067, 524288, 0, 196603, 524288, 0, 262139, 1048576, 0, 327675, 524288, 0, -4, 524288, 0, 65532, 524288, 0, 131068, 524288, 0, 196604, 524288, 0, 262140, 524288, 0, 327676, 524288, 0, -3, 524288, 0, 65533, 1048576, 0, 131069, 524288, 0, 196605, 524288, 0, 262141, 524288, 0, 327677, 524288, 0, -2, 524288, 0, 65534, 524288, 0, 131070, 524288, 0, 196606, 524288, 0, 262142, 524288, 0, 327678, 524288, 0)
+
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(48, -31)
+z_index = 1
+up_direction = Vector2(0, 1)
 script = ExtResource("1_jepo2")
+speed = 200
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("2_fb3le")
+texture = ExtResource("2_xv4xh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_duiln")
-
-[node name="Препятсвие" type="StaticBody2D" parent="."]
-position = Vector2(38, 101)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Препятсвие"]
-shape = SubResource("RectangleShape2D_1bb61")
-
-[node name="Sprite2D" type="Sprite2D" parent="Препятсвие/CollisionShape2D"]
-position = Vector2(2.5, 0.999998)
-scale = Vector2(8.39844, 0.1875)
-texture = ExtResource("2_fb3le")
+position = Vector2(0, 15)
+shape = SubResource("CapsuleShape2D_p6iwf")
