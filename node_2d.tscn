@@ -3,23 +3,39 @@
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_jepo2"]
 [ext_resource type="Texture2D" uid="uid://t26yj40j6oxk" path="res://icon.svg" id="2_fb3le"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3bvp3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_duiln"]
+custom_solver_bias = 0.327
+size = Vector2(130, 130)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bb61"]
 size = Vector2(1078, 20)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(48, -31)
 script = ExtResource("1_jepo2")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture = ExtResource("2_fb3le")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("CircleShape2D_3bvp3")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_duiln")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Препятсвие" type="StaticBody2D" parent="."]
 position = Vector2(38, 101)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Препятсвие"]
 shape = SubResource("RectangleShape2D_1bb61")
+
+[node name="Sprite2D" type="Sprite2D" parent="Препятсвие/CollisionShape2D"]
+position = Vector2(2.5, 0.999998)
+scale = Vector2(8.39844, 0.1875)
+texture = ExtResource("2_fb3le")
