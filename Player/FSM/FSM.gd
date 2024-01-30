@@ -20,3 +20,12 @@ func _process(delta):
 	
 func _physics_process(delta):
 	state.inner_physics_process(delta)
+	
+	
+func change_to(target_state:String,msg: Dictionary={}):
+	if not has_node(target_state):
+		print_debug("Нет такой ноды" + target_state) 
+		return
+	state.exit() # Убираем предыдущее состояние
+	state = get_node(target_state) # Назаначаем новое состояние 
+	state.enter(msg)  # хз пишем что всё работает , нахуя ? 

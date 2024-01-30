@@ -11,17 +11,19 @@ config_version=5
 [application]
 
 config/name="Новый Игровой Проект"
-run/main_scene="res://node_2d.tscn"
+run/main_scene="res://world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0.176471, 0.0941176, 0.25098, 1)
-config/icon="res://icon.svg"
+config/icon="res://спрайты/icon.svg"
 
 [autoload]
 
-Inventory="*res://Player/Inventory.gd"
+player="*res://Player/player.gd"
 
 [display]
 
+window/size/viewport_width=480
+window/size/viewport_height=270
 window/size/mode=3
 
 [input]
