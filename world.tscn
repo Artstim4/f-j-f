@@ -168,7 +168,6 @@ sources/1 = SubResource("TileSetAtlasSource_ltrkq")
 radius = 7.07107
 
 [node name="Node2D" type="Node2D"]
-scale = Vector2(-4.12505, 0.600045)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(22, 2)
