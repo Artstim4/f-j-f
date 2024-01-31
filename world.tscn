@@ -53,10 +53,14 @@ texture = ExtResource("1_urqu8")
 15:0/0 = 0
 15:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:0/0/physics_layer_0/angular_velocity = 0.0
+16:0/next_alternative_id = 2
 16:0/0 = 0
 16:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 16:0/0/physics_layer_0/angular_velocity = 0.0
 16:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+16:0/1 = 1
+16:0/1/physics_layer_0/linear_velocity = Vector2(0, 0)
+16:0/1/physics_layer_0/angular_velocity = 0.0
 17:0/0 = 0
 17:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 17:0/0/physics_layer_0/angular_velocity = 0.0
@@ -164,6 +168,7 @@ sources/1 = SubResource("TileSetAtlasSource_ltrkq")
 radius = 7.07107
 
 [node name="Node2D" type="Node2D"]
+scale = Vector2(-4.12505, 0.600045)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(22, 2)
