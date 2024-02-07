@@ -7,7 +7,7 @@ var coins = 0
 @onready var animation = $AnimatedSprite2D
 var direction = Vector2.ZERO
 
-#
+
 #func movement():
 	#var input_direction = Input.get_vector("left", "right", "up", "down")
 	#var direction_x = Input.get_axis("left","right")

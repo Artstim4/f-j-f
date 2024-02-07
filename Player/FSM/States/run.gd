@@ -14,6 +14,5 @@ func inner_physics_process(delta):
 	
 	if player.velocity == Vector2.ZERO:
 		state_machine.change_to("Idle")
-		
-	player.animation.stop()
+	player.animation.play("run")
 	print(name)	
