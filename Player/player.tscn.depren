@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://Player/player.gd" id="1_cbyuw"]
 [ext_resource type="Texture2D" uid="uid://duratlio4cfkp" path="res://Player/Sprits/attack.png" id="2_pqs3v"]
 [ext_resource type="Texture2D" uid="uid://dfywwi7rijxe1" path="res://Player/Sprits/IDLE.png" id="3_ixwjr"]
+[ext_resource type="Script" path="res://Player/FSM/CharacterStateMchine.gd" id="4_i51uf"]
 [ext_resource type="Texture2D" uid="uid://drm8vkg5utlb2" path="res://Player/Sprits/run.png" id="4_tlodn"]
 [ext_resource type="Script" path="res://Player/FSM/States/idle.gd" id="5_mjtn8"]
 [ext_resource type="Script" path="res://Player/FSM/States/run.gd" id="6_7lhal"]
-[ext_resource type="Script" path="res://Player/FSM/CharacterStateMchine.gd" id="6_l74hq"]
 [ext_resource type="Script" path="res://Player/FSM/States/attack.gd" id="7_4br2c"]
 [ext_resource type="Script" path="res://Player/Area_Attack.gd" id="9_kylhe"]
 
@@ -312,23 +312,22 @@ shape = SubResource("CapsuleShape2D_p6iwf")
 sprite_frames = SubResource("SpriteFrames_uqd47")
 animation = &"attack"
 
-[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+[node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("9_kylhe")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AnimatedSprite2D/Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(4, 0)
 polygon = PackedVector2Array(-1, 23, 15, 23, 18, 9, 20, -11, 10, -26, -5, -21)
-disabled = true
 
-[node name="CharacterStateMachine" type="Node" parent="." node_paths=PackedStringArray("curent_state")]
-script = ExtResource("6_l74hq")
-curent_state = NodePath("Idle")
+[node name="FSM" type="Node" parent="."]
+script = ExtResource("4_i51uf")
+start_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="CharacterStateMachine"]
+[node name="Idle" type="Node" parent="FSM"]
 script = ExtResource("5_mjtn8")
 
-[node name="Run" type="Node" parent="CharacterStateMachine"]
+[node name="Run" type="Node" parent="FSM"]
 script = ExtResource("6_7lhal")
 
-[node name="Attak" type="Node" parent="CharacterStateMachine"]
+[node name="Attack" type="Node" parent="FSM"]
 script = ExtResource("7_4br2c")
