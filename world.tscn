@@ -205,6 +205,7 @@ texture = ExtResource("4_1nvrr")
 shape = SubResource("CircleShape2D_dnd5d")
 
 [node name="Player" parent="." instance=ExtResource("5_njov8")]
+position = Vector2(11, 10)
 
 [node name="Slime" parent="." instance=ExtResource("6_6i63g")]
 position = Vector2(7, 70)

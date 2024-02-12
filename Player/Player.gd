@@ -5,9 +5,11 @@ var hp = 100
 var coins = 0
 @export var speed = 400
 @onready var animation = $AnimatedSprite2D
+@onready var animation_tree = $AnimationTree
 var direction = Vector2.ZERO
 
-
+func ready():
+	animation_tree.active = true
 #func movement():
 	#var input_direction = Input.get_vector("left", "right", "up", "down")
 	#var direction_x = Input.get_axis("left","right")
