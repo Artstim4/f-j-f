@@ -172,6 +172,7 @@ sources/1 = SubResource("TileSetAtlasSource_ltrkq")
 radius = 7.07107
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(66, -32)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(22, 2)
@@ -205,7 +206,7 @@ texture = ExtResource("4_1nvrr")
 shape = SubResource("CircleShape2D_dnd5d")
 
 [node name="Player" parent="." instance=ExtResource("5_njov8")]
-position = Vector2(11, 10)
+position = Vector2(-15, 53)
 
 [node name="Slime" parent="." instance=ExtResource("6_6i63g")]
 position = Vector2(7, 70)

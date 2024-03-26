@@ -2,50 +2,42 @@ extends Node
 
 class_name CharacterStateMachine
 
-@export var curent_state:State
+@export var character : CharacterBody2D
+@export var animation_tree : AnimationTree
+@export var current_state : State
 
-var states: Array[State]
-
+var states : Array[State]
 
 func _ready():
 	for child in get_children():
-		if (child is State):
+		if(child is State):
 			states.append(child)
+			
+			# Set the states up with what they need to function
+			child.character = character
+			child.playback = animation_tree["parameters/playback"]
+			
 		else:
-			push_warning("Child"+child.name+"is not a State for CharacterStateMachine")
+			push_warning("Child " + child.name + " is not a State for CharacterStateMachine")
 
+func _physics_process(delta):
+	if(current_state.next_state != null):
+		switch_states(current_state.next_state)
+		
+	current_state.state_process(delta)
 
 func check_if_can_move():
-	return curent_state.can_move
+	return current_state.can_move
 
 
+func switch_states(new_state : State):
+	if(current_state != null):
+		current_state.on_exit()
+		current_state.next_state = null
+	
+	current_state = new_state
+	
+	current_state.on_enter()
 
-#
-#@export var start_state: NodePath # справа в инспекторе путь создаёт
-#@onready var state: State = get_node(start_state) # код state.gd добавляет в переменную  state
-#
-#
-#func _ready():
-	#for child in get_children():
-		#child.state_machine = self
-	#state.enter()
-
-#
-#func input(event):
-	#state.inner_input(event)
-	#
-	#
-#func _process(delta):
-	#state.inner_process(delta)
-	#
-#func _physics_process(delta):
-	#state.inner_physics_process(delta)
-	#
-	#
-#func change_to(target_state:String,msg: Dictionary={}):
-	#if not has_node(target_state):
-		#print_debug("Нет такой ноды" + target_state) 
-		#return
-	#state.exit() # Убираем предыдущее состояние
-	#state = get_node(target_state) # Назаначаем новое состояние 
-	#state.enter(msg)  # хз пишем что всё работает , нахуя ? 
+func _input(event : InputEvent):
+	current_state.state_input(event)
