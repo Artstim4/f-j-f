@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://3oq2e8cl7xl6"]
+[gd_scene load_steps=49 format=3 uid="uid://3oq2e8cl7xl6"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_mnrdg"]
 [ext_resource type="Texture2D" uid="uid://duratlio4cfkp" path="res://Player/Sprits/attack.png" id="2_pqs3v"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Player/FSM/States/idle.gd" id="5_mjtn8"]
 [ext_resource type="Script" path="res://Player/FSM/States/run.gd" id="6_7lhal"]
 [ext_resource type="Script" path="res://Player/FSM/States/attack.gd" id="7_4br2c"]
+[ext_resource type="Script" path="res://Player/Area_Attack.gd" id="9_kylhe"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p6iwf"]
 radius = 8.0
@@ -309,6 +310,13 @@ shape = SubResource("CapsuleShape2D_p6iwf")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uqd47")
 animation = &"attack"
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("9_kylhe")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(4, 0)
+polygon = PackedVector2Array(-1, 23, 15, 23, 18, 9, 20, -11, 10, -26, -5, -21)
 
 [node name="FSM" type="Node" parent="."]
 script = ExtResource("4_i51uf")

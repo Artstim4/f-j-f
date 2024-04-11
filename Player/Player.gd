@@ -1,4 +1,5 @@
 class_name  Player
+
 extends CharacterBody2D
 # чисто для переменых персонажа код
 var hp = 100
