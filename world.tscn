@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cl1xecsveh3wq"]
+[gd_scene load_steps=11 format=3 uid="uid://c7raqqjj6mmo4"]
 
 [ext_resource type="Texture2D" uid="uid://dwxaafh1xfg08" path="res://спрайты/Sprite-0002.png" id="1_urqu8"]
 [ext_resource type="Texture2D" uid="uid://dixvqnsusdp0f" path="res://спрайты/TEXTURE_2.png" id="2_nsfjn"]
@@ -208,6 +208,7 @@ shape = SubResource("CircleShape2D_dnd5d")
 position = Vector2(7, 70)
 
 [node name="Player" parent="." instance=ExtResource("5_njov8")]
+position = Vector2(-119, -19)
 
 [connection signal="body_entered" from="Coin" to="Coin" method="_on_body_entered"]
 [connection signal="body_entered" from="Coin2" to="Coin2" method="_on_body_entered"]

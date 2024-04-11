@@ -1,10 +1,10 @@
-class_name  Player
+class_name  player
 
 extends CharacterBody2D
 # чисто для переменых персонажа код
 var hp = 100
 var coins = 0
-@export var speed = 400
+@export var speed = 300
 @onready var animation = $AnimatedSprite2D
 var direction = Vector2.ZERO
 

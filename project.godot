@@ -18,7 +18,7 @@ config/icon="res://спрайты/icon.svg"
 
 [autoload]
 
-player="res://Player/player.tscn"
+Player="*res://Player/Player.gd"
 
 [display]
 
