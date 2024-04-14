@@ -2,7 +2,6 @@ extends State
 
 class_name AttakState
 
-#extends StatePlayer
 #
 #
 #func inner_physics_process(delta):

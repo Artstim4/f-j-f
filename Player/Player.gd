@@ -1,12 +1,16 @@
+extends CharacterBody2D
+
 class_name Player
 
-extends CharacterBody2D
-# чисто для переменых персонажа код
-var hp = 100
-var coins = 0
-@export var speed = 100
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var animation_tree = $AnimationTree
+
+
+@export var speed = 100
+@export var coins = 0
+
+
+var hp = 100
 var direction = Vector2.ZERO
 
 var animation_locked: bool = false
@@ -24,6 +28,8 @@ func update_facing_direction():
 		sprite.flip_h = false
 	else:
 		sprite.flip_h = true
+		
+		
 func movement():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	var direction_x = Input.get_axis("left","right")

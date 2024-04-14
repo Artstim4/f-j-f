@@ -1,10 +1,14 @@
-[gd_scene load_steps=56 format=3 uid="uid://3oq2e8cl7xl6"]
+[gd_scene load_steps=60 format=3 uid="uid://3oq2e8cl7xl6"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_cbyuw"]
 [ext_resource type="Texture2D" uid="uid://duratlio4cfkp" path="res://Player/Sprits/attack.png" id="2_pqs3v"]
 [ext_resource type="Texture2D" uid="uid://dfywwi7rijxe1" path="res://Player/Sprits/IDLE.png" id="3_ixwjr"]
 [ext_resource type="Texture2D" uid="uid://drm8vkg5utlb2" path="res://Player/Sprits/run.png" id="4_tlodn"]
 [ext_resource type="Script" path="res://Player/FSM/CharacterStateMchine.gd" id="5_pbxp7"]
+[ext_resource type="Script" path="res://Player/FSM/States/idle.gd" id="6_gq2pt"]
+[ext_resource type="Script" path="res://Player/FSM/States/attack.gd" id="7_ryi66"]
+[ext_resource type="Script" path="res://Player/FSM/States/run.gd" id="8_xsfy1"]
+[ext_resource type="Script" path="res://Player/DebugLable.gd" id="9_xkoq5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2eous"]
 atlas = ExtResource("2_pqs3v")
@@ -498,5 +502,26 @@ libraries = {
 "": SubResource("AnimationLibrary_hf881")
 }
 
-[node name="CharacterStateMachine" type="Node" parent="."]
+[node name="CharacterStateMachine" type="Node" parent="." node_paths=PackedStringArray("current_state")]
 script = ExtResource("5_pbxp7")
+current_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("run_state")]
+script = ExtResource("6_gq2pt")
+run_state = NodePath("../Run")
+
+[node name="Run" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("idle_state")]
+script = ExtResource("8_xsfy1")
+idle_state = NodePath("../Idle")
+
+[node name="Attak" type="Node" parent="CharacterStateMachine"]
+script = ExtResource("7_ryi66")
+
+[node name="DebugLable" type="Label" parent="." node_paths=PackedStringArray("state_machine")]
+offset_left = -19.0
+offset_top = -49.0
+offset_right = 26.0
+offset_bottom = -26.0
+text = "State:"
+script = ExtResource("9_xkoq5")
+state_machine = NodePath("../CharacterStateMachine")

@@ -2,8 +2,12 @@ extends State
 
 class_name IdleState
 
+@export var run_state:State
 
-#extends StatePlayer
+func state_input(event:InputEvent):
+	if(event.is_action_pressed("down") or event.is_action_pressed("up")or event.is_action_pressed("left")or event.is_action_pressed("right")):
+		next_state = run_state
+		
 #
 #func enter(_msg:Dictionary={}):
 	#player.velocity = Vector2.ZERO
