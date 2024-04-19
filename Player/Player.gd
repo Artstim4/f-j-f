@@ -25,3 +25,4 @@ var direction = Vector2.ZERO
 	#if Input.is_action_just_pressed("attack"):
 		#$AnimatedSprite2D.play("attak")
 	#
+

@@ -14,5 +14,9 @@ func inner_physics_process(delta):
 	
 	if player.velocity == Vector2.ZERO:
 		state_machine.change_to("Idle")
+	if (direction.x < 0):
+		player.animation.flip_h = true
+	else:
+		player.animation.flip_h = false
 	player.animation.play("run")
 	print(name)	
