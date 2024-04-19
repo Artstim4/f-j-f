@@ -1,15 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://c7raqqjj6mmo4"]
+[gd_scene load_steps=12 format=3 uid="uid://cj4p6rx40wasr"]
 
-[ext_resource type="Texture2D" uid="uid://dwxaafh1xfg08" path="res://спрайты/Sprite-0002.png" id="1_urqu8"]
-[ext_resource type="Texture2D" uid="uid://dixvqnsusdp0f" path="res://спрайты/TEXTURE_2.png" id="2_nsfjn"]
-[ext_resource type="Script" path="res://Coin/coin.gd" id="3_wmoar"]
-[ext_resource type="Texture2D" uid="uid://ctar00lj3mwmf" path="res://Coin/coin.png" id="4_1nvrr"]
-[ext_resource type="PackedScene" uid="uid://3oq2e8cl7xl6" path="res://Player/player.tscn" id="5_njov8"]
-[ext_resource type="PackedScene" uid="uid://va204dobtxge" path="res://Slime/Slime.tscn" id="6_6i63g"]
-[ext_resource type="PackedScene" uid="uid://c3mxqampawvnh" path="res://Door/Door.tscn" id="7_yshjx"]
+[ext_resource type="Texture2D" uid="uid://dwxaafh1xfg08" path="res://спрайты/Sprite-0002.png" id="1_sud10"]
+[ext_resource type="Texture2D" uid="uid://dixvqnsusdp0f" path="res://спрайты/TEXTURE_2.png" id="2_ajhi0"]
+[ext_resource type="Script" path="res://Coin/coin.gd" id="3_ka5kg"]
+[ext_resource type="Texture2D" uid="uid://ctar00lj3mwmf" path="res://Coin/coin.png" id="4_04dvc"]
+[ext_resource type="PackedScene" uid="uid://va204dobtxge" path="res://Slime/Slime.tscn" id="5_ffebx"]
+[ext_resource type="PackedScene" uid="uid://3oq2e8cl7xl6" path="res://Player/player.tscn" id="6_1doos"]
+[ext_resource type="PackedScene" uid="uid://c3mxqampawvnh" path="res://Door/Door.tscn" id="7_twbbm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6t8qc"]
-texture = ExtResource("1_urqu8")
+texture = ExtResource("1_sud10")
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
@@ -76,7 +76,7 @@ texture = ExtResource("1_urqu8")
 19:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ltrkq"]
-texture = ExtResource("2_nsfjn")
+texture = ExtResource("2_ajhi0")
 use_texture_padding = false
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -187,33 +187,33 @@ layer_1/tile_data = PackedInt32Array(-13, 524288, 0, 65523, 524288, 0, 131059, 5
 
 [node name="Coin" type="Area2D" parent="."]
 position = Vector2(-110, 19)
-script = ExtResource("3_wmoar")
+script = ExtResource("3_ka5kg")
 
 [node name="Sprite2D" type="Sprite2D" parent="Coin"]
-texture = ExtResource("4_1nvrr")
+texture = ExtResource("4_04dvc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coin"]
 shape = SubResource("CircleShape2D_dnd5d")
 
 [node name="Coin2" type="Area2D" parent="."]
 position = Vector2(-111, 60)
-script = ExtResource("3_wmoar")
+script = ExtResource("3_ka5kg")
 
 [node name="Sprite2D" type="Sprite2D" parent="Coin2"]
-texture = ExtResource("4_1nvrr")
+texture = ExtResource("4_04dvc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coin2"]
 shape = SubResource("CircleShape2D_dnd5d")
 
-[node name="Slime" parent="." instance=ExtResource("6_6i63g")]
+[node name="Slime" parent="." instance=ExtResource("5_ffebx")]
 position = Vector2(7, 70)
 
-[node name="Player" parent="." instance=ExtResource("5_njov8")]
+[node name="Player" parent="." instance=ExtResource("6_1doos")]
 position = Vector2(-119, -19)
 
-[node name="Door" parent="." instance=ExtResource("7_yshjx")]
-position = Vector2(45, 19)
-next_scene = "res://world2.tscn"
+[node name="Door" parent="." instance=ExtResource("7_twbbm")]
+position = Vector2(89, 76.5)
+next_scene = "res://world.tscn"
 
 [connection signal="body_entered" from="Coin" to="Coin" method="_on_body_entered"]
 [connection signal="body_entered" from="Coin2" to="Coin2" method="_on_body_entered"]

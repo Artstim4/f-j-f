@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3mxqampawvnh"]
+
+[ext_resource type="Script" path="res://Door/DooScript.gd" id="1_41y67"]
+[ext_resource type="Texture2D" uid="uid://b6txmeod26p7p" path="res://Door/Stone.png" id="2_w0gqi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2xqq"]
+size = Vector2(36, 45)
+
+[node name="Door" type="Node2D"]
+position = Vector2(-9, 10.5)
+script = ExtResource("1_41y67")
+
+[node name="DoorClosed" type="Sprite2D" parent="."]
+scale = Vector2(0.0559006, -0.119363)
+texture = ExtResource("2_w0gqi")
+metadata/_edit_lock_ = true
+
+[node name="DoorOpen" type="Sprite2D" parent="."]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="GoToNextScene" type="Area2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoToNextScene"]
+shape = SubResource("RectangleShape2D_e2xqq")
+
+[connection signal="body_entered" from="GoToNextScene" to="." method="_on_go_to_next_scene_body_entered"]

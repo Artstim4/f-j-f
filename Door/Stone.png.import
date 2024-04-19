@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjgwu56df7ce8"
-path="res://.godot/imported/IDLE.png-a091f43500edd1eeeea22203aa99a652.ctex"
+uid="uid://b6txmeod26p7p"
+path="res://.godot/imported/Stone.png-4702e8ca121fac4da7893c5aa5ac8df8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Sprits/IDLE.png"
-dest_files=["res://.godot/imported/IDLE.png-a091f43500edd1eeeea22203aa99a652.ctex"]
+source_file="res://Door/Stone.png"
+dest_files=["res://.godot/imported/Stone.png-4702e8ca121fac4da7893c5aa5ac8df8.ctex"]
 
 [params]
 
